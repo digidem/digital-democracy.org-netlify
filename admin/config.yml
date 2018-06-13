@@ -1,8 +1,12 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+  squash_merges: true
 publish_mode: editorial_workflow
 media_folder: "assets" # Media files will be stored in the repo under images/uploads
+slug:
+  encoding: "ascii" # Sanitize filenames (slugs) according to RFC3986. The only allowed characters are (0-9, a-z, A-Z, _, -, ~).
+  clean_accents: true # remove diacritics from slug characters before sanitizing. This is often helpful when using ascii encoding.
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
